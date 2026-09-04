@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, 'Segoe UI', Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+.home-notebook-bg {
+  background-color: #fdfdfb;
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 31px,
+      rgba(17, 17, 17, 0.08) 31px,
+      rgba(17, 17, 17, 0.08) 32px
+    ),
+    linear-gradient(rgba(232, 130, 140, 0.55), rgba(232, 130, 140, 0.55));
+  background-repeat: repeat, no-repeat;
+  background-position:
+    0 0,
+    right 40px top 0;
+  background-size:
+    100% 32px,
+    2px 100%;
+}
+
+@media (max-width: 640px) {
+  .home-notebook-bg {
+    background-position:
+      0 0,
+      right 24px top 0;
+  }
+}
+
+.logo-handwriting {
+  font-family: 'Rubik', cursive;
+  font-weight: 300;
+  color: #111111;
+  line-height: 1;
+}
+
+.logo-first {
+  letter-spacing: -0.04em;
+  margin-left: -0.05em;
+}
+
+.v-checkmark {
+  width: 1.02em;
+  height: 1.02em;
+  display: inline-block;
+  transform: rotate(-14deg);
+  flex-shrink: 0;
+  margin: 0 -0.19em;
+}
