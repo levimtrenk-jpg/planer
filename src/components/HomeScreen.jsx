@@ -6,8 +6,8 @@ export function HomeScreen({ onCreate, activities, onOpenActivity }) {
   const activityList = Object.values(activities).sort((a, b) => b.createdAt - a.createdAt)
 
   return (
-    <div className="home-notebook-bg flex min-h-screen flex-col items-center gap-10 px-4 py-16 text-center">
-      <div dir="rtl" className="logo-handwriting flex items-center justify-center text-[10.8rem] sm:text-[13.5rem]">
+    <div className="home-notebook-bg flex min-h-screen flex-col items-center gap-6 overflow-x-hidden px-4 py-10 text-center sm:gap-10 sm:py-16">
+      <div dir="rtl" className="logo-handwriting flex items-center justify-center text-[20vw] sm:text-[13.5rem]">
         <span className="logo-first">פלא</span>
         <svg viewBox="0 0 100 100" className="v-checkmark" aria-hidden="true">
           <path
@@ -42,7 +42,7 @@ export function HomeScreen({ onCreate, activities, onOpenActivity }) {
         <button
           type="button"
           onClick={onCreate}
-          className="flex items-center gap-2 rounded-2xl bg-sun px-10 py-5 text-xl font-bold text-ink shadow-md transition-all hover:bg-sun-dark active:scale-95"
+          className="flex items-center gap-2 rounded-2xl bg-sun px-6 py-4 text-lg font-bold text-ink shadow-md transition-all hover:bg-sun-dark active:scale-95 sm:px-10 sm:py-5 sm:text-xl"
         >
           <Plus className="h-7 w-7" />
           צור פעילות חדשה
