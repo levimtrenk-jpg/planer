@@ -55,8 +55,8 @@ body {
 }
 
 .v-checkmark {
-  width: 1.02em;
-  height: 1.02em;
+  width: 0.918em;
+  height: 0.918em;
   display: inline-block;
   transform: rotate(-14deg);
   flex-shrink: 0;
