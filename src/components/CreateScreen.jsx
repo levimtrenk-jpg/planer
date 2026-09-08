@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BarChart3, Check, Copy, Eye, Plus, Share2, X } from 'lucide-react'
+import { BarChart3, Check, Copy, Plus, Share2, X } from 'lucide-react'
 import { generateId, loadActivityNames, saveActivityName } from '../lib/storage'
 import { DateTimePicker } from './DateTimePicker'
 import { Field, ScreenShell, inputClass } from './shared'
@@ -33,7 +33,6 @@ export function CreateScreen({
   onCreate,
   onUpdate,
   onGoDashboard,
-  onPreviewParticipant,
   onBack,
 }) {
   const [form, setForm] = useState(() => buildInitialForm(activity))
@@ -123,24 +122,14 @@ export function CreateScreen({
             {copied ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
             {copied ? 'הועתק! ✓' : 'העתק קישור'}
           </button>
-          <div className="flex w-full flex-col gap-3 sm:flex-row">
-            <button
-              type="button"
-              onClick={() => onGoDashboard(createdId)}
-              className="flex flex-1 items-center justify-center gap-2 rounded-2xl border-2 border-ink px-6 py-3 font-bold text-ink transition-all hover:bg-ink hover:text-paper"
-            >
-              <BarChart3 className="h-5 w-5" />
-              המשך לדשבורד
-            </button>
-            <button
-              type="button"
-              onClick={() => onPreviewParticipant(createdId)}
-              className="flex flex-1 items-center justify-center gap-2 rounded-2xl border-2 border-ink/20 px-6 py-3 font-medium text-ink/70 transition-all hover:border-ink hover:text-ink"
-            >
-              <Eye className="h-5 w-5" />
-              תצוגה מקדימה כמשתתף
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={() => onGoDashboard(createdId)}
+            className="flex w-full items-center justify-center gap-2 rounded-2xl border-2 border-ink px-6 py-3 font-bold text-ink transition-all hover:bg-ink hover:text-paper"
+          >
+            <BarChart3 className="h-5 w-5" />
+            המשך לדשבורד
+          </button>
         </div>
       </ScreenShell>
     )
